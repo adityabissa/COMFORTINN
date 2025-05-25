@@ -588,21 +588,18 @@
           setLoadingState(true);
 
           // Send signup request
-          // Change this line (around line 346):
-fetch("https://comfortinn-rxqf.onrender.com/signup", {
-
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                username: formData.username,
-                password: formData.password,
-                email: formData.email,
-                name: formData.fullName,
-              }),
+          fetch("https://comfortinn-rxqf.onrender.com/signup", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-          )
+            body: JSON.stringify({
+              username: formData.username,
+              password: formData.password,
+              email: formData.email,
+              name: formData.fullName,
+            }),
+          })
             .then(async (response) => {
               if (response.ok) {
                 // Check if response is JSON or text
